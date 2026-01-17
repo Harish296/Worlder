@@ -2,9 +2,9 @@
 This repository is created for Task 2: Knowledge of Security Vulnerabilities.
 For this task, I chose to demonstrate the following three common security vulnerabilities:
 
-1. SQL injection–prone input handling
-2. Insecure file handling
-3. Missing input validation
+1. SQL injection–prone input handling - User input is directly passed to the query which allows attackers to manipulate the query to their needs.
+2. Insecure file handling - User input is used to access files without restrictions allowing attackers to access files which they don't have access to it.
+3. Missing input validation - User input is not properly checked, allowing invalid or malicious data to be passed.
 
 To demonstrate these issues clearly, I created two Python scripts:
 vulnerable.py(insecure version) and secure.py(secure version). Since SQL injection is one of the selected vulnerabilities, I also created a separate script called database.py, which creates a SQLite database containing sample user records.
