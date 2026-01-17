@@ -7,9 +7,7 @@ For this task, I chose to demonstrate the following three common security vulner
 3. Missing input validation
 
 To demonstrate these issues clearly, I created two Python scripts:
-vulnerable.py – insecure version
-secure.py – secure version
-Since SQL injection is one of the selected vulnerabilities, I also created a separate script called database.py, which creates a SQLite database containing sample user records.
+vulnerable.py(insecure version) and secure.py(secure version). Since SQL injection is one of the selected vulnerabilities, I also created a separate script called database.py, which creates a SQLite database containing sample user records.
 
 In vulnerable.py, the get_user() function takes a user ID as an argument and returns the corresponding record of the user from the database. However, the SQL query is built using the provided user input without any validation. This leads to a SQL injection vulnerability in the function. For example, if the user enters a string ' OR '1'='1 to the function instead of a valid ID, it impacts the query logic, returning data from all records in the database. This indicates a lack of validation of the input provided to the function.
 The same script also comprises the readfile() function, which is responsible for the reading of files on the filesystem based on user input. The function is prone to the path traversal attack because the user’s input for the filepath is neither validated nor restricted. This also shows the file input is not handled properly. The user can gain access to the sensitive files, including the admin.txt file, which is the administrative file. This can be achieved through the use of the directory traversal character sequence like ../admin_access/admin.txt.
